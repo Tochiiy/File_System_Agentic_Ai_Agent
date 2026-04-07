@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agentic AI Console</title>
+    <!-- <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='favicon.ico') }}"> -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+
+</head>
+<body>
+
+    <header class="ui-header">
+        <div class="logo">
+            <i class="fas fa-robot"></i>
+            <span>Agentic Console</span>
+        </div>
+    </header>
+
+    <main id="respond">
+        <div class="agent-msg">
+            <i class="fas fa-terminal"></i>
+            <span>System initialized. Ready for commands.</span>
+        </div>
+    </main>
+
+    <footer class="input-area">
+        <form id="agent-form">
+            <div class="input-wrapper">
+                <textarea id="prompt" placeholder="Message Agentic AI..." required rows="1"></textarea>
+                <button type="submit" id="submit">
+                    <i class="fas fa-paper-plane"></i>
+                </button>
+            </div>
+        </form>
+    </footer>
+
+    <script src="{{ url_for('static', filename='main.chat.js') }}" defer></script>
+</body>
+</html>

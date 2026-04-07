@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- 
+        Agentic AI Console - Frontend
+        A clean, terminal-inspired interface for interacting with the file-system AI agent.
+    -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A powerful AI console with file system capabilities.">
+    <title>Agentic AI Console</title>
+
+    <!-- FAVICON SETUP -->
+    <!-- Modern SVG support with standard ICO fallback for maximum compatibility -->
+    <link rel="icon" type="image/svg+xml" href="/static/favicon.svg">
+    <link rel="shortcut icon" href="/static/favicon.ico">
+
+    <!-- EXTERNAL ASSETS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Syne:wght@400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+
+<header>
+    <div class="logo">
+        <div class="logo-icon"><i class="fas fa-robot"></i></div>
+        <span>Agentic Console</span>
+    </div>
+    <!-- Status indicator showing server connectivity state -->
+    <div class="status-pill">
+        <div class="status-dot"></div>
+        ONLINE
+    </div>
+</header>
+
+<!-- CHAT CONTAINER: Messages are dynamically injected here -->
+<main id="respond">
+    <div class="message-row agent">
+        <div class="bubble agent">
+            <i class="fas fa-terminal agent-icon"></i>
+            <span>System initialized. Ready for commands. You can paste file paths directly and I'll detect them automatically.</span>
+        </div>
+    </div>
+</main>
+
+<!-- USER INPUT AREA -->
+<footer>
+    <!-- Proactive File Path Preview -->
+    <div class="file-preview" id="file-preview">
+        <i class="fas fa-file-code"></i>
+        <span id="file-preview-path"></span>
+    </div>
+    <div class="input-wrapper">
+        <textarea id="prompt" placeholder="Message Agentic AI... (paste a file path to auto-detect)" rows="1"></textarea>
+        <button id="submit" title="Send (Enter)">
+            <i class="fas fa-paper-plane"></i>
+        </button>
+    </div>
+    <div class="hint">Enter to send &nbsp;·&nbsp; Shift+Enter for new line</div>
+</footer>
+
+<!-- CORE LOGIC: Externalized for better maintainability -->
+<script src="/static/main.chat.js"></script>
+
+</body>
+</html>
+
+
+</body>
+</html>
