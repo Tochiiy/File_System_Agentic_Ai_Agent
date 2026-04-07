@@ -116,14 +116,15 @@ async function sendMessage() {
     showThinking();
 
     try {
-        // 3. POST request to /api/agent endpoint
-        const res = await fetch('/api/agent', {
+        // 3. POST request to /agent endpoint
+        const res = await fetch('/agent', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ prompt: text })
         });
 
         const data = await res.json();
+
 
         hideThinking();
         
