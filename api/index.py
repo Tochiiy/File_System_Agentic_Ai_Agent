@@ -5,8 +5,9 @@ Static files (HTML, CSS, JS) are handled natively by Vercel from the root/public
 """
 
 from fastapi import FastAPI, HTTPException
+from fastapi.responses import FileResponse
 from pydantic import BaseModel
-from .Agent import run_agent  # Absolute import from the same directory
+from .Agent import run_agent
 import os
 
 # Initialize FastAPI App
@@ -23,6 +24,13 @@ class AgentResponse(BaseModel):
     response: str
 
 # ── ENDPOINTS ─────────────────────────────────────────────────────────────
+
+@app.get("/")
+def home():
+    """Serves the main application UI (index.html)."""
+    # In Vercel, the root of the project is the execution directory.
+    return FileResponse("index.html")
+
 
 @app.get("/api/health")
 def health():
@@ -47,4 +55,4 @@ async def invoke_agent(request: AgentRequest):
         # Catch unexpected errors and return a 500 Internal Server Error
         raise HTTPException(status_code=500, detail=f"Error invoking Agent: {str(e)}")
 
-# NOTE: uvicorn.run() is NOT required for Vercel as it manages workers natively.
+
