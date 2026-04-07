@@ -5,7 +5,6 @@ Static files (HTML, CSS, JS) are handled natively by Vercel from the root/public
 """
 
 from fastapi import FastAPI, HTTPException
-from fastapi.responses import FileResponse
 from pydantic import BaseModel
 from .Agent import run_agent
 import os
@@ -24,13 +23,6 @@ class AgentResponse(BaseModel):
     response: str
 
 # ── ENDPOINTS ─────────────────────────────────────────────────────────────
-
-@app.get("/")
-def home():
-    """Serves the main application UI (index.html)."""
-    # In Vercel, the root of the project is the execution directory.
-    return FileResponse("index.html")
-
 
 @app.get("/api/health")
 def health():
