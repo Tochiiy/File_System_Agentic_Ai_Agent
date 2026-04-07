@@ -10,7 +10,7 @@ from fastapi.responses import FileResponse
 from pydantic import BaseModel
 from Agent import run_agent
 import os
-import uvicorn
+#import uvicorn
 
 # Initialize FastAPI App
 app = FastAPI(title="Agentic AI Console")
@@ -60,5 +60,5 @@ if __name__ == "__main__":
     # Run the server using Uvicorn
     # host: 0.0.0.0 makes it accessible on the local network
     # port: 8000 is the standard port for FastAPI/Uvicorn development
-    print("Agentic Console is starting on http://localhost:8000")
-    uvicorn.run(app, host="0.0.0.0", port=8000)
+    #print("Agentic Console is starting on http://localhost:8000")
+    #uvicorn.run(app, host="0.0.0.0", port=8000)
